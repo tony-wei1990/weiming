@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="../css/registerheader.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/registerfooter.css"/>
+	<body>
+		<!--头部-->
+		<div id="header">
+			<div class="header-in">
+				<h3>
+					<a href="../index.html"><img src="../img/register-1.png"></a>
+					<p>欢迎登陆</p>
+				</h3>
+				<dl>
+					<dt>没有账号？</dt>
+					<dd><a style="border-right:1px solid #cccccc;padding:0 5px;" href="register.html">立即注册</a></dd>
+					<dd><a href="#">帮助中心</a></dd>
+				</dl>
+			</div>
+		</div>
+		<!--main部分-->
+		<div id="main">
+			<div class="wrap">
+				<img src="../img/login-1.png" />
+				<div class="login">
+					<ul class="nav">
+						<li class="select"><a class="active" href="#">账号登陆</a></li>
+						<li><a href="#">手机动态码登陆</a></li>
+					</ul>
+					<div class="content">
+						<div class="box un">
+							<div class="div" style="margin-top:25px">
+								<div class="pic">
+									<img src="../img/register-5.png" />
+								</div>
+								<input type="text" class="username response" placeholder="手机号码/邮箱/用户名" />
+								<span class="result">请输入用户名</span>
+							</div>
+							<div class="div" style="margin-top:25px;width:120px;margin-left:15px">
+								<div class="pic">
+									<img src="../img/register-6.png" />
+								</div>
+								<input type="text" class="code response" placeholder="验证码" />
+								<span class="result">请输入验证码</span>
+								<div class="num">
+									2131312
+								</div>
+								<div class="change">
+									看不清楚
+									<a href="#">换一个</a>
+								</div>
+							</div>
+							<div class="div" style="margin-top:25px">
+								<div class="pic">
+									<img src="../img/register-6.png" />
+								</div>
+								<input type="password" class="pwd response" placeholder="登陆密码" />
+								<span class="result">请输入密码</span>
+							</div>
+							<div class="div" style="margin-top:25px">
+								<input type="button" class="btn" value="登陆" />
+							</div>
+						</div>
+						
+						<div class="box mb">
+							<div class="div" style="margin-top:25px">
+								<div class="pic">
+									<img src="../img/register-5.png" />
+								</div>
+								<input type="text" class="username response" placeholder="请输入手机号码" />
+								<span class="result">请正确输入您的手机号码</span>
+							</div>
+							<div class="div" style="margin-top:25px;width:190px;margin-left:15px">
+								<div class="pic">
+									<img src="../img/register-6.png" />
+								</div>
+								<input style="left:40px;width:150px" type="text" class="code response" placeholder="短信动态验证码" />
+								<span class="result">请输入验证码</span>
+								<div class="message" style="position:absolute;left:190px;width:130px;line-height: 40px;background:#ffba00;color:white">
+									获取短信验证码
+								</div>
+							</div>
+							<div class="div" style="margin-top:25px">
+								<input type="button" class="btn" value="登陆" />
+							</div>
+							<p style="margin-top:20px;margin-left:20px;font-size:12px;color:#333333">注意：未注册过奥买家的手机号在首次登录时将自动完成注册，使用该登录方式代表您已接受<span style="color:red">《会员注册协议》</span></p>
+						</div>
+					</div>
+					<div class="down">
+						<dl>
+							<dt>直接使用以下账号登陆</dt>
+							<dd class="dd1"></dd>
+							<dd class="dd2"></dd>
+							<dd class="dd3"></dd>
+							<dd class="dd4"></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--footer部分-->
+		<div id="footer">
+			<ul>
+				<li><a href="#">关于奥买家</a></li>
+				<li><a href="#">诚聘英才</a></li>
+				<li><a href="#" style="border-right:0">联系我们</a></li>
+			</ul>
+			<p>粤ICP备15091122号-1|Copyright© 奥买家 2013-2016，All Rights Reserved</p>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../js/cookie.js"></script>
+	<script type="text/javascript">
+		$("#main .login .nav li").click(function(){
+			var index=$(this).index();
+			$(this).addClass("select").siblings().removeClass("select");
+			$(this).children().addClass("active").end().siblings().children().removeClass("active");
+			if(index==0)
+			{
+				$("#main .login .content").animate({"left":"0"})
+			}
+			else
+			{
+				$("#main .login .content").animate({"left":"-350px"})
+			}
+		})
+	</script>
+	<script type="text/javascript">
+		var arr=[];
+		var str="";
+		for(var i=65;i<=90;i++)
+		{
+			arr.push(String.fromCharCode(i));
+		}
+		for(var j=97;j<=122;j++)
+		{
+			arr.push(String.fromCharCode(j));
+		}
+		for(var k=0;k<=9;k++)
+		{
+			arr.push(k);
+		}
+		fresh();
+		function fresh()
+		{
+			for(var i=0;i<=3;i++)
+			{
+				var num=Math.round(Math.random()*(arr.length-1));
+				str+=arr[num];
+			}
+			$("#main .num").html(str);
+		}
+		$("#main .change a").click(function()
+		{
+			str="";
+			fresh();
+		})
+	</script>
+	<script type="text/javascript">
+		//登陆用户名的验证
+		$("#main .un .btn").click(function()
+		{
+			$.each($("#main .response"),function(index,value)
+			{
+				if($(value).val()=="")
+				{
+					$(value).parent().children(".result").show();
+				}
+				else
+				{
+					$(value).parent().children(".result").hide();
+				}
+				
+			})
+			if($("#main .result").eq(0).css("display")=="none"&&$("#main .result").eq(1).css("display")=="none"&&$("#main .result").eq(2).css("display")=="none")
+				{
+					var userName=getCookie("username_"+$("#main .username").val());
+					var pwd=getCookie("pwd_"+$("#main .username").val());
+					if($("#main .num").html()==$("#main .code").val())
+					{
+						if($("#main .username").val()==userName&&$("#main .pwd").val()==pwd)
+						{
+							window.open("../index.html?username="+$("#main .username").val());
+						}
+						else
+						{
+							alert("用户名或密码错误，请重新输入！")
+						}
+					}
+					else
+					{
+						alert("您输入的验证码不正确！");
+						str="";
+						fresh();
+					}
+				}
+		})
+	</script>
+</html>

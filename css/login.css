@@ -1,0 +1,26 @@
+#main{width:100%;background:#ffb400}
+#main .wrap{width:995px;height:480px;margin:0 auto;position: relative;}
+#main .wrap img{position:absolute;left:0;top:0;}
+#main .wrap .login{width:350px;height:430px;background:white;position:absolute;right:0;top:25px;overflow: hidden;}
+#main .wrap .login .nav{width:350px;height:54px;background;red;border-bottom:1px solid #e5e5e5}
+#main .wrap .login .nav li{float:left;margin:0 30px;height:52px}
+#main .wrap .login .nav li a{font-size:18px;font-family: "微软雅黑";color:#999999;line-height:54px;padding:0 5px}
+#main .wrap .login .nav li.select{border-bottom:3px solid red}
+#main .wrap .login .nav li a.active{color:black}
+#main .wrap .login .content{width:700px;height:300px;position:absolute;left:0;}
+#main .wrap .login .box{width:350px;height:300px;float:left;position:relative;}
+#main .wrap .login .box .div{width:315px;height:40px;border-radius: 5px;margin:0 auto;border:1px solid #e5e5e5;text-align: center;position: relative;background:#f9aec3}
+#main .wrap .login .box .div .pic{position:absolute;left:10px;top:10px;}
+#main .result{width:400px;height:20px;position:absolute;top:44px;left:0;text-align: left;display:none;color:#f03468;font-size:12px}
+#main .wrap .login .box .div input{height:38px;border:1px solid #e5e5e5;width:275px;position:absolute;right:0;border-left:0;color:#666666}
+#main .wrap .login .box .div .code{width:80px}
+#main .wrap .login .box .div .num{background:pink;position:absolute;left:125px;top:0;width:90px;height:40px;border-radius:5px;line-height: 40px;text-align: center;font-size:30px;font-weight:bold;}
+#main .wrap .login .box .div .btn{width:315px;height:40px;background:#f03468;color:white;font-size: 17px;font-family: "微软雅黑";border:1px solid #f03468;border-radius: 5px;}
+#main .wrap .login .box .div .change{left:220px;top:0;text-align: center;line-height: 40px;position:absolute;width:100px;font-size:12px;background:#f3c8d2;color:#666666}
+#main .wrap .login .down{position:absolute;bottom:0;margin-left:20px;margin-bottom:20px}
+#main .wrap .login .down dl dd{float:left;width:26px;height:26px;border-radius:50%;margin-right:5px}
+#main .wrap .login .down dl dt{margin-bottom:5px;font-size:12px;color:#999999}
+#main .wrap .login .down dl .dd1{background:url("../img/register-7.png")}
+#main .wrap .login .down dl .dd2{background:url("../img/register-7.png") -32px 0}
+#main .wrap .login .down dl .dd3{background:url("../img/register-7.png") -64px 0}
+#main .wrap .login .down dl .dd4{background:url("../img/register-7.png") -96px 0}

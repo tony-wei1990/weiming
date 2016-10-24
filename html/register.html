@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+	</head>
+	<body>
+		<!--头部-->
+		<div id="header">
+			<div class="header-in">
+				<h3>
+					<a href="../index.html"><img src="../img/register-1.png"></a>
+					<p>欢迎注册</p>
+				</h3>
+				<dl>
+					<dt>已有账号？</dt>
+					<dd><a style="border-right:1px solid #cccccc;padding:0 5px;" href="login.html">立即登录</a></dd>
+					<dd><a href="#">帮助中心</a></dd>
+				</dl>
+			</div>
+		</div>
+		<!--main部分-->
+		<div id="main" style="position:relative">
+			<div class="box" style="margin-top:80px">
+				<div class="pic">
+					<img src="../img/register-2.png" />
+				</div>
+				<input type="text" class="username" placeholder="手机号码/邮箱/用户名" />
+				<span class="result"></span>
+			</div>
+			<div class="box" style="margin-top:25px">
+				<div class="pic">
+					<img src="../img/register-3.png" />
+				</div>
+				<input type="password" class="pwd" placeholder="密码由6-20个数字和字母的组合" />
+				<span class="result"></span>
+			</div>
+			<p class="xieyi"><a href="#">会员注册协议</a></p>
+			<div class="box">
+				<input type="button" class="btn" value="同意协议并注册" />
+			</div>
+		</div>
+		<!--footer部分-->
+		<div id="footer">
+			<ul>
+				<li><a href="#">关于奥买家</a></li>
+				<li><a href="#">诚聘英才</a></li>
+				<li><a href="#" style="border-right:0">联系我们</a></li>
+			</ul>
+			<p>粤ICP备15091122号-1|Copyright© 奥买家 2013-2016，All Rights Reserved</p>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../js/cookie.js"></script>
+	<script type="text/javascript">
+		$("#main .username").blur(function()
+		{
+			if($(this).val()==getCookie("username_"+$(this).val()))
+			{
+				$(this).parent().children(".result").show();
+				$(this).parent().children(".result").html("用户名已经存在");
+			}
+			else
+			{
+				if($(this).val().length<6)
+				{
+					$(this).parent().children(".result").show();
+					$(this).parent().children(".result").html("请输入至少6个字符");
+				}
+				else
+				{
+					if(!isNaN($(this).val()))//是纯数字检查手机
+					{
+						if($(this).val().length>=6&&$(this).val().length!=11)
+						{
+							$(this).parent().children(".result").show();
+							$(this).parent().children(".result").html("纯数字用户名只支持手机号注册");
+							$(this).parent().css({"border":"1px solid #e5e5e5"});
+						}
+						else
+						{
+							isnum($(this));
+						}
+					}
+					else
+					{
+						if($(this).val().indexOf("@")!=-1)//检查邮箱
+						{
+							ismail($(this));//邮箱的验证
+						}
+						else//检查用户名
+						{
+							isusername($(this));
+						}
+					}
+				}
+			}
+		})
+		//电话号码验证
+	    function isnum(obj)
+	    {
+	    	var oSpan=obj.parent().children(".result");
+	    	var reg=/^1[34578]\d{9}$/;
+	    	if(!reg.test(obj.val()))
+	    	{
+	        	oSpan.show();
+	        	oSpan.html("请正确填写手机号！");
+	        	obj.parent().css({"border":"1px solid #e5e5e5"})
+	    	}
+	    	else
+	    	{
+	    		oSpan.hide();
+	    		obj.parent().css({"border":"1px solid #7bdea7"})
+	    	}
+	    }
+       
+    //验证用户名格式格式
+    function isusername(obj)
+    {
+    	var reg=/^[a-zA-Z0-9_]+$/; //用户名的验证的正则表达式
+    	var oSpan=obj.parent().children(".result");
+    	if(reg.test(obj.val()))
+		{
+			if(obj.val().length>20)
+			{
+				oSpan.show();
+				oSpan.html("用户名长度只能在6到20之间");
+				obj.parent().css({"border":"1px solid #e5e5e5"});
+			}
+			else
+			{
+								
+				oSpan.hide();
+		    	obj.parent().css({"border":"1px solid #7bdea7"})
+			}
+		}
+		else
+		{
+			oSpan.show();
+			oSpan.html("用户名只能由只能由英文字母、数字、减号、或下划线、组成");
+			obj.parent().css({"border":"1px solid #e5e5e5"});
+		}
+    }
+       
+   	//验证邮箱的格式
+    function ismail(obj)
+    {
+    	var reg=/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;//邮箱的验证的正则表达式
+    	var oSpan=obj.parent().children(".result");
+    	if(reg.test(obj.val()))
+		{
+			oSpan.hide();
+	    	obj.parent().css({"border":"1px solid #7bdea7"})
+		}
+		else
+		{
+			oSpan.show();
+	        oSpan.html("请输入正确的邮箱格式！");
+	        obj.parent().css({"border":"1px solid #e5e5e5"});
+		}
+    }
+	//密码的验证
+	$("#main .pwd").blur(function(){
+		var reg=/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
+		var oSpan=$(this).parent().children(".result");
+		if(reg.test($(this).val()))
+		{
+			oSpan.hide();
+			$(this).parent().css({"border":"1px solid #7bdea7"})
+		}
+		else
+		{
+			oSpan.show();
+			oSpan.html("密码由6-20个数字和字母的组合");
+	        $(this).parent().css({"border":"1px solid #f03468"});
+		}
+	})
+	
+	
+	</script>
+	
+	<script type="text/javascript">
+		//提交
+	//setCookie(name,value,day)
+	//getCookie(key)
+	$("#main .btn").click(function()
+	{
+		if($("#main .username").val().length==0||$("#main .pwd").val().length==0||$("#main .result").eq(0).css("display")=="block"||$("#main .result").eq(1).css("display")=="block")
+		{
+			alert("用户名和密码必须全部填写完整之后才能登陆");
+		}
+		else
+		{
+			setCookie("username_"+$("#main .username").val(),$("#main .username").val(),60,true);
+			setCookie("pwd_"+$("#main .username").val(),$("#main .pwd").val(),60,true);
+			window.open("login.html");
+		}
+	})
+	</script>
+</html>
