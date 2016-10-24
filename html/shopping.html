@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>我的购物车-奥买家</title>
+    <link rel="stylesheet" href="../css/shopping.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/index-header.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/index-footer.css"/>
+    <style type="text/css">
+		#city{
+			width:330px;
+			float:left;
+		}
+	</style>
+</head>
+<body style="background:#f5f5f5">
+	<!--头部-->
+		<div id="header">
+			<div class="wrap">
+				<ul id="left">
+					<li class="list1">欢迎来到奥买家!</li>
+					<li class="list2"><a href="login.html">登录</a></li>
+					<li class="list3" style=";"><a href="register.html">注册</a></li>
+					<li class="list4" style=";">免费配送至</li>
+				</ul>
+				<div id="city">
+					<select class="prov"></select> 
+					<select class="city" disabled="disabled"></select>
+					<select class="dist" disabled="disabled"></select>
+				</div>
+				<ul id="right">
+					<li class="list1"><a href="#">个人中心</a></li>
+					<li class="list2"><a href="#">手机版</a></li>
+					<li class="list3"><a href="shopping.html">我的购物车</a></li>
+				</ul>
+			</div>
+		</div>
+	<!--banner部分-->
+	<div id="banner">
+			<div class="banner-in">
+				<h3>
+					<a href="../index.html"><img src="../img/register-1.png"></a>
+					<p>购物车</p>
+				</h3>
+				<div class="banner-pic">
+					<img src="../img/shopping1.png" />
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!--catbox部分-->
+	<div id="catbox">
+		<div id="catbox-top">
+			<div>
+	            <span>
+	            	<label>
+	                	<input class="check-all check" type="checkbox"/>&nbsp;&nbsp;全选
+	            	</label>
+	            </span>
+	            <span style="margin-left:200px">商品</span>
+	            <span style="margin-left:160px">单价(元)</span>
+	            <span style="margin-left:90px">数量</span>
+	            <span style="margin-left:110px">小计(元)</span>
+	            <span style="margin-left: 230px;">操作</span>
+	        </div>
+		</div>
+	    <table id="cartTable">
+	        <tbody></tbody>
+	    </table>
+	    <div class="foot" id="foot">
+	        <label class="fl select-all">
+	        	<input type="checkbox" class="check-all check"/>&nbsp;&nbsp;全选
+	        </label>
+	        <a class="fl" id="deleteAll" href="#">清空购物车</a>
+	        <div class="fr closing">立即结算</div>
+	        <input type="hidden" id="cartTotalPrice"/>
+	        <div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
+	        <div class="fr selected" id="selected">已选商品<span id="selectedTotal">0</span>件<span class="arrow up">︽</span><span class="arrow down">︾</span></div>
+	        <div class="selected-view">
+	            <div id="selectedViewList" class="clearfix">
+	                <div>
+	                	<img src="images/1.jpg">
+	                	<span>取消选择</span>
+	                </div>
+	            </div>
+	            <span class="arrow">◆<span>◆</span></span></div>
+	    	</div>
+		</div>
+	</div>
+	<!--底部-->
+	<div id="footer">
+			<div class="footer-middle">
+				<div class="middle-in">
+					<div class="footer-logo">
+						<h3><a href="#"><img src="../img/footer-4.png" /></a></h3>
+						<p style="position:absolute">
+							<span>关注我们</span>
+							<a href="#">
+								<img src="../img/footer-2.png">
+							</a>
+							<span class="code" style="position:absolute;display: none;top:-170px;left:0px;width:140px;height:120px;background:white;text-align: center;padding-top:20px;">
+								<img src="../img/footer-5.png" />
+								<span style="display: block;position:absolute;bottom:-10px;left:65px;border-left:transparent solid 10px;border-right:transparent solid 10px;border-top:white solid 10px;border-bottom:#002A80 solid 0px">
+								</span>
+							</span>
+							<a href="#">
+								<img src="../img/footer-3.png">
+							</a>
+							<span class="code" style="position:absolute;display: none;top:-170px;left:50px;width:140px;height:120px;background:white;text-align: center;padding-top: 20px;">
+								<img src="../img/footer-5.png" />
+								<span style="display: block;position:absolute;bottom:-10px;left:65px;border-left:transparent solid 10px;border-right:transparent solid 10px;border-top:white solid 10px;border-bottom:#002A80 solid 0px">
+								</span>
+							</span>
+						</p>
+					</div>
+					<div class="footer-menu">
+						<dl>
+							<dt>购物条款</dt>
+							<dd><a href="#">会员注册协议</a></dd>
+							<dd><a href="#">网站使用条款</a></dd>
+							<dd><a href="#">隐私条款</a></dd>
+						</dl>
+					</div>
+					<div class="footer-menu">
+						<dl>
+							<dt>购物指南</dt>
+							<dd><a href="#">简单购物流程</a></dd>
+							<dd><a href="#">售后服务</a></dd>
+							<dd><a href="#">网站免责声明</a></dd>
+						</dl>
+					</div>
+					
+					<div class="footer-menu">
+						<dl>
+							<dt>新手上路</dt>
+							<dd><a href="#">订单的几种状态</a></dd>
+							<dd><a href="#">顾客导读</a></dd>
+						</dl>
+					</div>
+					<div class="footer-menu">
+						<dl>
+							<dt>支付配送方式</dt>
+							<dd><a href="#">关于送货和验货</a></dd>
+							<dd><a href="#">网上支付小贴士</a></dd>
+						</dl>
+					</div>
+					<div class="footer-menu">
+						<dl>
+							<dt>奥买家</dt>
+							<dd><a href="#">关于奥买家</a></dd>
+							<dd><a href="#">联系我们</a></dd>
+						</dl>
+					</div>
+					<div class="footer-code">
+						<dl>
+							<dt><img src="../img/footer-5.png" /></dt>
+							<dd>下载奥买家移动APP</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+<script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+<script src="../js/find.js"></script>
+<script src="../js/cookie.js"></script>
+<script>
+    //+号 需要做的三件事情  1:数量的改变   2:减号的出现   3：小计的求和
+    /*
+	 <tr>
+		 <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+		 <td class="goods"><img src="images/1.jpg" alt=""/><span>Casio/卡西欧 EX-TR350</span></td>
+		 <td class="price">5999.88</td>
+		 <td class="count"><span class="reduce"></span>
+		 <input class="count-input" type="text" value="1"/>
+		 <span class="add">+</span></td>
+		 <td class="subtotal">5999.88</td>
+		 <td class="operation"><span class="delete">删除</span></td>
+	 </tr>
+     */
+    var parent = document.getElementsByTagName("table")[0].tBodies[0];
+    var str = decodeURI(document.cookie);
+    var list = [];
+    var char = "goodsid_";
+    for (var i = 0; i < str.length; i++) {
+        var index = str.indexOf(char, i);//0 开始找are index =1  2的位置开始找 index =7
+        if (index == i) {   //i就是char出现的位置
+            var starIndex = i + 8;
+            var endIndex = str.indexOf("=", starIndex);
+            var id = str.substring(starIndex, endIndex);
+            list.push(id)
+        }
+    }
+    //var str = "";
+    var detailList = ["goodsid", "goodsName", "goodsDesc", "goodsPic", "goodsNum", "goodsPrice"];
+    for (var i = 0; i < list.length; i++) {
+        var id = list[i];
+        var tr = document.createElement("tr");
+        tr.className="tr2"
+        parent.appendChild(tr);
+        var td = document.createElement("td");
+        td.className = "checkbox";
+        td.innerHTML = "<input class='check-one check' type='checkbox'/>";
+        tr.appendChild(td);
+
+        var td = document.createElement("td");
+        td.className = "goods";
+        var img = document.createElement("img");
+        var pic = getCookie("goodsPic_" + id);
+        img.src =pic;
+        td.appendChild(img);
+        var span = document.createElement("span");
+        var desc = getCookie("goodsName_" + id);
+        span.innerHTML = desc;
+        td.appendChild(span);
+        tr.appendChild(td);
+
+        var td = document.createElement("td");
+        td.className = "price";
+        td.innerHTML = (getCookie("goodsPrice_" + id) * 1).toFixed(2);
+        tr.appendChild(td);
+
+        var td = document.createElement("td");
+        td.className = "count";
+        var reduce = document.createElement("span");
+        if (getCookie("goodsNum_" + id) > 1) {
+            reduce.innerHTML = "-";
+        }
+        reduce.setAttribute("data-id", id);
+        reduce.className = "reduce";
+        td.appendChild(reduce);
+
+
+        var input = document.createElement("input");
+        input.className = "count-input";
+        input.type = "text";
+        input.value = getCookie("goodsNum_" + id);
+        td.appendChild(input);
+
+        var add = document.createElement("span");
+        add.className = "add";
+        add.innerHTML = "+";
+        add.setAttribute("data-id", id);
+        td.appendChild(add);
+        tr.appendChild(td);
+
+
+        var td = document.createElement("td");
+        td.className = "subtotal";
+        td.innerHTML = (getCookie("goodsPrice_" + id) * getCookie("goodsNum_" + id)).toFixed(2);
+        tr.appendChild(td);
+
+
+        var td = document.createElement("td");
+        td.className = "operation";
+        var span = document.createElement("span");
+        span.className = "delete";
+        span.innerHTML = "删除"
+        span.setAttribute("data-id", id);
+        td.appendChild(span);
+        tr.appendChild(td);
+
+        add.onclick = function () {
+            var countInput = findPre(this); //数量的文本框
+            var reduce = findPre(countInput);//减号
+            var price = findPre(this.parentNode);//单价
+            var subtotal = findNext(this.parentNode);//小计
+            reduce.innerHTML = "-";
+            var num = countInput.value * 1 + 1;
+            countInput.value = num;
+            subtotal.innerHTML = ( price.innerHTML * 1 * num).toFixed(2);  //单价乘以数量
+            total();
+            setCookie("goodsNum_" + this.getAttribute("data-id"), countInput.value, 7);
+        }
+
+        reduce.onclick = function () {
+            var countInput = findNext(this); //数量的文本框
+            var price = findPre(this.parentNode);//单价
+            var subtotal = findNext(this.parentNode);//小计
+            if (countInput.value > 1) {
+                var num = countInput.value * 1 - 1;
+                countInput.value = num;
+                subtotal.innerHTML = ( price.innerHTML * 1 * num).toFixed(2);
+                if (num == 1) {
+                    this.innerHTML = "";
+                }
+            } else {
+                return false;
+            }
+            setCookie("goodsNum_" + this.getAttribute("data-id"), countInput.value, 7);
+            total();
+        }
+    }
+
+
+    
+
+
+    var checkALL = document.getElementsByClassName("check-all")[0];
+    var checkALL1 = document.getElementsByClassName("check-all")[1];
+    var checkList = document.getElementsByClassName("check-one");
+   checkALL1.onclick=checkALL.onclick = function () {
+        for (var i = 0; i < checkList.length; i++) {
+            checkList[i].checked = this.checked;
+        }
+        total();
+    };
+    for (var i = 0; i < checkList.length; i++) {
+        checkList[i].onclick = function () {
+            total();
+        }
+
+    }
+    function total() {
+        var totalNum = 0;
+        var totalPrice = 0;
+        for (var i = 0; i < checkList.length; i++) {
+            var checkOne = checkList[i];
+            if (checkOne.checked) {
+                //然后根据checknone 去找到数量 和 小计 然后把它们全部分别统计
+                //定位num标签
+                var tr = checkOne.parentNode.parentNode;
+                var numTd = tr.children[3];
+                var numInput = numTd.children[1];
+                var num = numInput.value * 1;
+                totalNum += num;  //求的是数量
+
+                var priceTd = tr.children[4];
+                var price = priceTd.innerHTML * 1;
+                totalPrice += price;
+            }
+        }
+        document.getElementById("selectedTotal").innerHTML = totalNum;
+        document.getElementById("priceTotal").innerHTML = totalPrice.toFixed(2);
+    }
+    var deleteList = document.getElementsByClassName("delete");
+    for (var i = 0; i < deleteList.length; i++) {
+        deleteList[i].onclick = function () {
+            var tr = this.parentNode.parentNode;
+            var trParent = tr.parentNode;
+            trParent.removeChild(tr);
+            total();
+            removeCookieById(this.getAttribute("data-id"));
+        }
+    }
+    
+</script>
+	<script type="text/javascript">
+	/*修复购物车底部删除按钮,实现商品全部清空的效果;*/
+		$("#deleteAll").click(function()
+		{
+			$("#catbox").remove();
+			for(var i=0;i<list.length;i++)
+			{
+				var id=list[i];
+				for(var j=0;j<detailList.length;j++)
+				{
+					setCookie(detailList[j] + "_" + id, "", -1);
+				}
+			}
+		})
+	</script>
+	<script type="text/javascript">
+		//底部鼠标移入二维码的显示
+		//#footer .footer-middle .middle-in .footer-logo p a img:hover span{display: block;}
+		$("#footer .footer-middle .middle-in .footer-logo p a img").eq(0).hover(function(){
+			$(this).parent().parent().children(".code").eq(0).css({"display":"block"});
+		},function(){
+			$(this).parent().parent().children(".code").eq(0).css({"display":"none"});
+		})
+		$("#footer .footer-middle .middle-in .footer-logo p a img").eq(1).hover(function(){
+			$(this).parent().parent().children(".code").eq(1).css({"display":"block"});
+		},function(){
+			$(this).parent().parent().children(".code").eq(1).css({"display":"none"});
+		})
+	</script>
+	<script type="text/javascript">
+		/*登陆中头部转变的js*/
+		var userMessage=window.location.href.split("?")[1].split("=")[1];
+		var admin=getCookie("username_"+userMessage);
+		if(admin)
+		{
+			$("#header .wrap #left .list1").html("您好"+userMessage);
+			$("#header .wrap #left .list2").remove();
+			$("#header .wrap #left .list3 a").html("退出");
+			$("#header .wrap #left .list3 a").attr("href","#");
+			$("#header .wrap #left .list3 a").click(function(){
+				$("#header .wrap #left .list1").html("欢迎来到奥买家！");
+				var list2=$("<li class='list2'><a href='html/login.html'>登录</a></li>")
+				var list3=$("<li class='list3'><a href='html/register.html'>注册</a></li>");
+				$(this).parent().before(list2);
+				$(this).parent().before(list3);
+				$(this).parent().remove();
+			})
+		}
+		/*登陆后点击购物车*/
+		$("#right .list3 a").click(function(){
+			window.open("shopping.html?admin="+userMessage)
+		})
+	</script>
+	<script type="text/javascript" src="../js/jquery.cityselect1.js"></script>
+	<script type="text/javascript">
+	//省市区三级联动
+		$(function(){
+			$("#city").citySelect({
+				prov:"湖北", 
+				city:"武汉",
+				dist:"洪山区",
+				nodata:"none"
+			}); 
+		});
+	</script>
+</html>

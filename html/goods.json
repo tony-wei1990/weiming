@@ -1,0 +1,26 @@
+[
+	{
+	"id":"good1",
+	"src1":["images/small1.jpg","images/small2.jpg","images/small3.jpg","images/small4.jpg"],
+	"src2":["images/big1.jpg","images/big2.jpg","images/big3.jpg","images/big4.jpg"],
+	"name": "魅力衣裳",
+    "desc": "此处没有了",
+    "price": 166
+	},
+	{
+	"id":"good2",
+	"src1":["images/girlsmall1.jpg","images/girlsmall2.jpg","images/girlsmall3.jpg","images/girlsmall4.jpg"],
+	"src2":["images/girlbig1.jpg","images/girlbig2.jpg","images/girlbig3.jpg","images/girlbig4.jpg"],
+	"name": "魅力女孩",
+    "desc": "此处没有了",
+    "price": 230
+	},
+	{
+	"id":"good3",
+	"src1":["images/dior-small1.jpg","images/dior-small2.jpg","images/dior-small3.jpg","images/dior-small4.jpg","images/dior-small5.jpg"],
+	"src2":["images/dior-big1.jpg","images/dior-big2.jpg","images/dior-big3.jpg","images/dior-big4.jpg","images/dior-big5.jpg"],
+	"name": "dior",
+    "desc": "此处没有了",
+    "price": 899
+	}
+]

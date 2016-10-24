@@ -1,0 +1,13 @@
+/*右边的侧边栏部分*/
+#index-shopping{width:330px;height:100%;position:fixed;right:-330px;top:0;z-index: 2;}
+#index-shopping .left{width:40px;background:#1a1a1a;height:100%;}
+#index-shopping .left .mark{height:110px;width:40px;background:#1a1a1a;margin-top:200px}
+#index-shopping .right{width:290px;background:white;height:100%}
+#index-shopping .left,#index-shopping .right{float:left}
+#index-shopping .left .logo{width:28px;height:30px;text-align: center;margin:0 auto}
+#index-shopping .left .text{width:15px;height:45px;font-size:15px;color:white;text-align: center;margin:0 auto}
+#index-shopping .left .circle{width:20px;height:20px;background:#f14877;text-align: center;line-height: 20px;border-radius: 50%;margin:0 auto;color:white;font-weight:bold;margin-top:10px}
+#index-shopping .right{position:relative}
+#index-shopping .right .btn{width:250px;height:40px;background:#f03468;color:white;font-size:20px;font-family: "微软雅黑";border:1px solid #f03468;position:absolute;bottom:20px;left:20px}
+#index-shopping .right .num{width:40px;height:20px;position:absolute;bottom:80px;left:20px}
+#index-shopping .right .total{width:150px;height:20px;position:absolute;bottom:80px;right:20px;text-align: right;}

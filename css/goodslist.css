@@ -1,0 +1,6 @@
+*{margin:0;padding:0;list-style: none;}
+a{text-decoration: none;}
+/*content部分*/
+#content{width:1190px;background:pink;margin:0 auto}
+#content #location{width:1190px;height:65px;background:yellow}
+#contnet #content-location ul li{float:left}

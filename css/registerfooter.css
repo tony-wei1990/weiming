@@ -1,0 +1,7 @@
+/*footer部分*/
+#footer{width:995px;height:150px;margin:0 auto;text-align: center;overflow: hidden;}
+#footer ul{overflow: hidden;margin:0 auto;width:220px;margin-top:45px;margin-bottom:10px}
+#footer ul li{float:left}
+#footer ul li a{border-right:1px solid #b299b2;padding:0 5px;color:#999999;font-size:12px}
+#footer ul li a:hover{text-decoration: underline;}
+#footer p{color:#999999;font-size:12px}
